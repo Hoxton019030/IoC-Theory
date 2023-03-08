@@ -10,7 +10,11 @@ import com.example.ioctheory.dao.UserDaoMysqlImpl;
  */
 public class UserServiceImpl implements UserService {
     //需求變更，要一直改這邊
-    private UserDao userDao = new UserDaoMysqlImpl();
+    private UserDao userDao ;
+
+    public UserServiceImpl(UserDao userDao) {
+        this.userDao = userDao;
+    }
 
     public void getUser() {
         userDao.getUser();
